@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, MutableRefObject } from 'react';
+import React, { useRef, useState, useEffect, MutableRefObject, UIEvent } from 'react';
 import { observer } from 'mobx-react';
 import styled from 'styled-components';
 
@@ -43,7 +43,7 @@ const Wheel = observer(
       return currentDate;
     });
 
-    const handleScroll = (e: any) => {
+    const handleScroll = (e: UIEvent<HTMLDivElement>) => {
       e.preventDefault();
 
       const top = wheelRef.current.scrollTop;
